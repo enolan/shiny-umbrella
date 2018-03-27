@@ -1,0 +1,23 @@
+name:                shiny-umbrella-server
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/enolan/shiny-umbrella#readme
+license:             GPL-3
+author:              Echo Nolan
+maintainer:          echo@echonolan.net
+copyright:           2018 Echo Nolan
+category:            UI
+
+dependencies:
+  - base >= 4.7 && < 5
+  - classy-prelude
+
+executables:
+  shiny-umbrella-server:
+    source-dirs:      src
+    main:             Main.hs
+
+default-extensions:
+  - NoImplicitPrelude
+  - OverloadedStrings
