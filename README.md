@@ -1,9 +1,8 @@
 # Shiny Umbrella
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JKoSZS4ovKA?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-Shiny Umbrella is a system for controlling your Linux computer by voice command.
-It's designed to work using Dragon NaturallySpeaking / Dragon Professional
+Shiny Umbrella is a system for controlling your Linux computer by [voice
+command](https://www.youtube.com/watch?v=JKoSZS4ovKA). It's designed to work
+using Dragon NaturallySpeaking / Dragon Professional
 Individual 15 and Linux. Nuance has a lot of names for what is mostly the same
 product with different vocabularies and features. DPI 15 is the newest version
 of Dragon for people outside of law and medicine. Dragon runs in a Windows
