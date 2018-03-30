@@ -1,8 +1,10 @@
-# Script that should be placed in: C:\NatLink\NatLink\MacroSystem\ so it will
-# be picked up by NatLink
+import time
+from threading import *
 
-from natlink import OutOfRange
+import natlink
 from natlinkutils import GrammarBase
+
+natlink.natConnect(True)
 
 def getAllWords(resObj):
   choices = []
@@ -10,7 +12,7 @@ def getAllWords(resObj):
   while True:
     try:
       choices.append(resObj.getWords(n))
-    except OutOfRange:
+    except natlink.OutOfRange:
       return choices
     n += 1
 
@@ -35,5 +37,20 @@ class CatchallGrammar(GrammarBase):
 grammar = CatchallGrammar()
 grammar.activate("catchall", exclusive=1)
 
-def unload():
-  grammar.unload()
+loaded = True
+
+def printLoop():
+  while loaded:
+    print("loop")
+    time.sleep(1)
+
+loopThread = Thread(target=printLoop)
+loopThread.start()
+
+natlink.waitForSpeech(10000)
+
+loaded = False
+loopThread.join()
+
+grammar.unload()
+natlink.natDisconnect()
