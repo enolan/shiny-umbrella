@@ -1,0 +1,16 @@
+So, how do we want our RPC to work?
+The client needs to send the following messages:
+- recognized utterances
+- hypotheses
+- recognition start events
+The server needs to receive those and send these:
+- corrections
+- context information, if possible
+- enable/disable recognition forwarding
+- trigger fake recognitions for testing
+
+So my original thought was to use two-way JSON-RPC but that doesn't seem to be
+supported at all in Python, and the Haskell library I found doesn't compile
+anymore. I could write some Python code to do JSON-RPC and fix up the Haskell
+library, or I could write a custom thing myself. I think it's probably simplest
+to write a custom thing myself. Will use a very simple JSON thing.
