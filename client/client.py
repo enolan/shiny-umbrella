@@ -1,10 +1,19 @@
+import json
+import socket
 import time
 from threading import *
+from uuid import uuid4
 
 import natlink
 from natlinkutils import GrammarBase
 
+import RPC
+
 natlink.natConnect(True)
+
+
+sock = socket.create_connection(("10.0.2.2", 43238))
+RPC.sendMsg(RPC.utterance([["hello", "world"], ["hello", "oh", "whirled"]]), sock)
 
 
 def getAllWords(resObj):

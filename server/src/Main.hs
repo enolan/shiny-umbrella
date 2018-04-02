@@ -16,7 +16,7 @@ main =
     (socket AF_INET Stream defaultProtocol)
     close
     $ \lsock -> do
-      let saddr = SockAddrInet 43238 $ tupleToHostAddress (192,168,56,1)
+      let saddr = SockAddrInet 43238 $ tupleToHostAddress (127, 0, 0, 1)
       bind lsock saddr
       listen lsock 1
       connCtx <- initConnectionContext
